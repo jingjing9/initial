@@ -15,6 +15,21 @@ export const asyncRouterMap = [
     meta: { title: 'menu.home' },
     redirect: '/dashboard/workplace',
     children: [
+      {
+        path: '/new',
+        name: 'new',
+        component: RouteView,
+        meta: { title: '最新', keepAlive: true, permission: ['new'] },
+        redirect: '/new/newpage',
+        children: [
+          {
+            path: '/new/newpage',
+            name: 'Newpage',
+            component: () => import('@/views/new/Newpage'),
+            meta: { title: '页面', keepAlive: true, permission: ['new'] }
+          }
+        ]
+      },
       // dashboard
       {
         path: '/dashboard',

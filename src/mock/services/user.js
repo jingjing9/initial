@@ -474,6 +474,30 @@ const info = options => {
  */
 const userNav = options => {
   const nav = [
+
+ {
+  name: 'new',
+  parentId: 0,
+  id: 333,
+  meta: {
+    icon: 'dashboard',
+    title: '最新',
+    show: true
+  },
+  component: 'RouteView',
+  redirect: '/new/newpage'
+},
+{
+  name: 'newpage',
+  parentId: 333,
+  id: 3331,
+  meta: {
+    title: '页面',
+    show: true
+  },
+  component: 'Newpage'
+},
+
     // dashboard
     {
       name: 'dashboard',
